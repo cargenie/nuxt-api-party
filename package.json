@@ -1,5 +1,5 @@
 {
-  "name": "@cargenie/nuxt-api-party",
+  "name": "cg-api-party",
   "type": "module",
   "version": "0.13.1",
   "packageManager": "pnpm@8.6.12",
