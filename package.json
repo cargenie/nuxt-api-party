@@ -9,9 +9,9 @@
   "homepage": "https://nuxt-api-party.byjohann.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johannschopplich/nuxt-api-party.git"
+    "url": "git+https://github.com/cargenie/nuxt-api-party.git"
   },
-  "bugs": "https://github.com/johannschopplich/nuxt-api-party/issues",
+  "bugs": "https://github.com/cargenie/nuxt-api-party/issues",
   "keywords": [
     "nuxt",
     "nuxt3",
