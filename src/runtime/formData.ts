@@ -7,7 +7,7 @@ export interface SerializedBlob {
 
 export type SerializedFormData = Record<
   string,
-  string | (SerializedBlob & { __type: 'blob' })
+  string | (SerializedBlob & { __type: 'blob' } | any[])
 >
 
 export function isFormData(obj: unknown): obj is FormData {
@@ -29,6 +29,7 @@ export async function formDataToObject(formData: FormData) {
   }
 
   for (const [key, value] of formData.entries()) {
+    const arr = [];
     if (value instanceof Blob) {
       obj[key] = {
         __type: 'blob',
@@ -37,7 +38,16 @@ export async function formDataToObject(formData: FormData) {
       }
     }
     else {
-      obj[key] = value
+      if (!obj[key]) {
+        obj[key] = value
+      }
+      else {
+        if (arr.length == 0) {
+          arr[0] = obj[key]
+        }
+        arr.push(value)
+        obj[key] = arr;
+      }
     }
   }
 
