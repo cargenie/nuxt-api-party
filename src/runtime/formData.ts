@@ -43,7 +43,7 @@ export async function formDataToObject(formData: FormData) {
       }
       else {
         if (arr.length == 0) {
-          arr[0] = obj[key]
+          arr.push(obj[key]);
         }
         arr.push(value)
         obj[key] = arr;
